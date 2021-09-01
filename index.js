@@ -11,7 +11,7 @@ function start(){
 }
 
 function menu(){
-    console.log("what would you like to do? /n 1: Balance /n 2: Withdraw 3: Deposit")
+    console.log("what would you like to do? /n 1: Balance /n 2: Withdraw 3: Deposit");
     let user = prompt();
     switch(user){
         case "1":

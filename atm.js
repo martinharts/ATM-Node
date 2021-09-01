@@ -4,17 +4,17 @@ const prompt = require('prompt-sync')();// prompt-synce implementation
 const account = require('./account'); //import from account
 
 function getBalance(){
-    console.log("Your account balance is" + " " + account.balance)
+    console.log("Your account balance is" + " " + account.balance);
 }
 
 function verifyPin(){
-    let user = prompt("Enter Pin Number")
+    let user = prompt("Enter Pin Number");
     if(user === account.pin){
-        console.log("Correct pin!")
+        console.log("Correct pin!");
     }
     else if(user != account.pin){
-        console.log("Incorrect pin! Try again!")
-        verifyPin(user)
+        console.log("Incorrect pin! Try again!");
+        verifyPin(user);
     }
 }
 
@@ -33,7 +33,7 @@ function withdraw(){
         console.log(`this is your withdrawn amount ${take}, your account balance is now ${newBalance}`);
     }
     else if(account.balance < take){
-        console.log("Insufficient funds")
+        console.log("Insufficient funds");
     }
 }
 
