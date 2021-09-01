@@ -19,5 +19,28 @@ function verifyPin(){
 }
 
 function deposit(){
-    
+    console.log("Enter amount that you would like to deposit");
+    let deposit = prompt();
+    let newBalance = account.balance + parseInt(deposit);
+    console.log(`Your new balance is ${newBalance}`);
+}
+
+function withdraw(){
+    console.log("Enter the amount that you would like to withdraw in multiples of 20");
+    let take = prompt();
+    if(account.balance >= take){
+        newBalance = account.balance - take;
+        console.log(`this is your withdrawn amount ${take}, your account balance is now ${newBalance}`);
+    }
+    else if(account.balance < take){
+        console.log("Insufficient funds")
+    }
+}
+
+
+module.exports = {
+    pinVerify: verifyPin,
+    balance: getBalance,
+    withdrawing: withdraw,
+    deposit: deposit,
 }
