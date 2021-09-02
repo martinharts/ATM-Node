@@ -2,11 +2,11 @@
 
 const prompt = require('prompt-sync')();// prompt-synce implementation
 const account = require('./account'); //import from account
-
+//get balance function displays balance of account
 function getBalance(){
     console.log("Your account balance is" + " " + account.balance);
 }
-
+// function to verify pin of account
 function verifyPin(){
     let user = prompt("Enter Pin Number");
     if(user === account.pin){
@@ -17,19 +17,19 @@ function verifyPin(){
         verifyPin(user);
     }
 }
-
+//function to allow user to deposit into account
 function deposit(){
     console.log("Enter amount that you would like to deposit");
     let deposit = prompt();
     let newBalance = account.balance + parseInt(deposit);
     console.log(`Your new balance is ${newBalance}`);
 }
-
+//function to allow user to withdraw from account
 function withdraw(){
     console.log("Enter the amount that you would like to withdraw in multiples of 20");
     let take = prompt();
     if(account.balance >= take){
-        newBalance = account.balance - take;
+       let newBalance = account.balance - parseInt(take);
         console.log(`this is your withdrawn amount ${take}, your account balance is now ${newBalance}`);
     }
     else if(account.balance < take){
@@ -37,7 +37,7 @@ function withdraw(){
     }
 }
 
-
+//export of functions 
 module.exports = {
     pinVerify: verifyPin,
     balance: getBalance,
