@@ -21,16 +21,16 @@ function verifyPin(){
 function deposit(){
     console.log("Enter amount that you would like to deposit");
     let deposit = prompt();
-    let newBalance = account.balance + parseInt(deposit);
-    console.log(`Your new balance is ${newBalance}`);
+    account.balance = account.balance + parseInt(deposit);
+    console.log(`Your new balance is ${account.balance}`);
 }
 //function to allow user to withdraw from account
 function withdraw(){
     console.log("Enter the amount that you would like to withdraw in multiples of 20");
     let take = prompt();
     if(account.balance >= take){
-       let newBalance = account.balance - parseInt(take);
-        console.log(`this is your withdrawn amount ${take}, your account balance is now ${newBalance}`);
+       account.balance = account.balance - parseInt(take);
+        console.log(`this is your withdrawn amount ${take}, your account balance is now ${account.balance}`);
     }
     else if(account.balance < take){
         console.log("Insufficient funds");
